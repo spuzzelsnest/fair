@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Spannabis Totems</title>
+    <link rel='stylesheet' href='css/main.css'>
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <script src='js/jquery-3.2.1.slim.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+</head>
+    <body>
+    <div class='main'>
+        <div id='start' class='start'>
+            <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
+            <div id='divTitle'></div>
+            <div id='divInfo'></div>
+        </div>
+    </div>
+    <script>
+    function start(){
+            var start = document.getElementById('start');
+            var title = document.getElementById('divTitle');
+            var info = document.getElementById('divInfo');
+        
+            start.innerHTML = '';
+        
+            var raffles = [];
+                raffles['0'] = 'Download Pack';
+                raffles['1'] = 'Newsletter Pack';
+                raffles['2'] = 'Follow Us Pack';
+        
+        for(var i=0; i<3; i++){
+            
+            var raffle = document.createElement('button');
+                raffle.className = 'btn btn-light';
+                raffle.innerHTML = raffles[i];
+                raffle.setAttribute('id', i);
+                start.append(raffle);
+                start.appendChild(document.createElement('p'));
+                start.setAttribute('align', 'center');
+                raffle.addEventListener('click', function(e){
+                    
+                    var id = this.id;
+                    start.innerHTML = '';
+                            
+                    
+                    console.log (id);
+                    title.innerHTML = raffles[id];
+                    info.innerHTML = description[id];
+                        if ( id == 0){
+                            start.append(title);
+                            
+                        }
+                        if (id == 1){
+                            start.append(title);
+                        }
+                        if (id == 1){
+                            start.append(title);
+                        }
+                });
+            }
+
+    }
+    </script>
+    
+    </body>
+</html>
