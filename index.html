@@ -28,9 +28,9 @@
                 raffles['1'] = 'Newsletter Pack';
                 raffles['2'] = 'Follow Us Pack';
             var descs = [];
-                descs['0'] = '<ol type="1"><li>Descarga la APP</li><li>Registrate</li><li>Muestra tu registro a neustro staff</li> Bienvenido a la familia Weedmaps';
+                descs['0'] = '<ol type="1"><li>Descarga la APP</li><li>Registrate</li><li>Muestra tu registro a neustro staff</li><p>Bienvenido a la familia Weedmaps';
                 descs['1'] = 'Suscbribete a nuestro Newsletter y llévate el porritp hinchuble de Weedmaps!';
-                descs['2'] = 'Gana uno de estos premios participando en neustro Sorteo!<ol type="1"><li>Follow @weedmapses</li><li>Tómate una foto en neustro stand y publica la en tu timele o stories etiquetandonos @weedmapses</li><li>Nuestra tu post a neustro Staff</li> ';
+                descs['2'] = 'Gana uno de estos premios participando en neustro Sorteo!<ol type="1"><li>Follow @weedmapses</li><li>Tómate una foto en neustro stand<br>y publica la en tu timele o stories etiquetandonos @weedmapses</li><li>Nuestra tu post a neustro Staff</li> ';
         
         for(var i=0; i< raffles.length; i++){
             
@@ -40,21 +40,20 @@
                 raffle.setAttribute('id', i);
                 start.append(raffle);
                 start.appendChild(document.createElement('p'));
-                start.setAttribute('align', 'center');
                 raffle.addEventListener('click', function(e){
                     
                     var id = this.id;
                     start.innerHTML = '';
                     title.innerHTML = raffles[id];
                     info.innerHTML = descs[id];
-
-              
+                    
                     start.append(title);
                     start.append(info);
-                    
+             
                 });
-            }
-
+            
+             
+        }
     }
     </script>
     

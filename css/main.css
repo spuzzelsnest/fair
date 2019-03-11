@@ -1,4 +1,4 @@
-.main,start {
+.main {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -8,5 +8,4 @@
 .divTitle{
   position: fixed;
   top: 20%;
-  left:inherit;  
 }
