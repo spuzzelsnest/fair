@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Spannabis Totems</title>
+    <meta charset='UTF-8'>
     <link rel='stylesheet' href='css/main.css'>
     <link rel='stylesheet' href='css/bootstrap.min.css'>
     <script src='js/jquery-3.2.1.slim.min.js'></script>
@@ -8,16 +9,30 @@
     <script src='js/bootstrap.min.js'></script>
 </head>
     <body>
-    <div class='main'>
-        <div id='start' class='start'>
-            <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
+        
+        <div id="wrapper">
+    <header id="page-header">
+        <div class="inner">
+             <img src='img/hearder.png' width='50%'>
+        </div>
+    </header>
+    <div id='page-content'>
+        <div class='inner' id='content'>
+         <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
             <div id='divTitle'></div>
             <div id='divInfo'></div>
         </div>
     </div>
+    <footer id="page-footer">
+        <div class="inner">
+            <img src='img/footer.png'  width='50%'>
+        </div>
+    </footer>
+</div>
+
     <script>
     function start(){
-            var start = document.getElementById('start');
+            var start = document.getElementById('content');
             var title = document.getElementById('divTitle');
             var info = document.getElementById('divInfo');
         
@@ -28,9 +43,9 @@
                 raffles['1'] = 'Newsletter Pack';
                 raffles['2'] = 'Follow Us Pack';
             var descs = [];
-                descs['0'] = '<ol type="1"><li>Descarga la APP</li><li>Registrate</li><li>Muestra tu registro a neustro staff</li><p>Bienvenido a la familia Weedmaps';
-                descs['1'] = 'Suscbribete a nuestro Newsletter y llévate el porritp hinchuble de Weedmaps!';
-                descs['2'] = 'Gana uno de estos premios participando en neustro Sorteo!<ol type="1"><li>Follow @weedmapses</li><li>Tómate una foto en neustro stand<br>y publica la en tu timele o stories etiquetandonos @weedmapses</li><li>Nuestra tu post a neustro Staff</li> ';
+                descs['0'] = '<ol type="1"><li>Descarga la APP</li><li>Registrate</li><li>Muestra tu registro a nuestro Staff</li><p>Bienvenido a la familia Weedmaps';
+                descs['1'] = 'Suscbribete a nuestro Newsletter y llévate el porrito hinchuble de Weedmaps!';
+                descs['2'] = 'Gana uno de estos premios participando en nuestro Sorteo!<ol type="1"><li>Follow @weedmapses</li><li>Tómate una foto en nuestro stand<br>y publica la en tu timeline o stories etiquetandonos @weedmapses</li><li>Muestra tu post a nuestro Staff</li> ';
         
         for(var i=0; i< raffles.length; i++){
             
@@ -40,22 +55,21 @@
                 raffle.setAttribute('id', i);
                 start.append(raffle);
                 start.appendChild(document.createElement('p'));
+                
                 raffle.addEventListener('click', function(e){
                     
                     var id = this.id;
                     start.innerHTML = '';
                     title.innerHTML = raffles[id];
+                    title.style.color = 'white';
                     info.innerHTML = descs[id];
-                    
+                    info.style.color = 'white';
                     start.append(title);
                     start.append(info);
-             
                 });
-            
-             
         }
     }
     </script>
-    
+     
     </body>
 </html>

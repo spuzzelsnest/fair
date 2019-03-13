@@ -1,11 +1,43 @@
-.main {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
+body { 
+  background-image: url('img/bg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
 }
-.divTitle{
-  position: fixed;
-  top: 20%;
+
+#page-header,
+#page-footer {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background: #ccc;
+    height: 
+}
+
+#page-header {
+    top: 0;
+    height: 26%;
+}
+
+#page-footer {
+    bottom: 0;
+    height: 150px;
+}
+
+#page-content {
+    position: fixed;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner {
+    width: 550px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: #1a2538;
 }
