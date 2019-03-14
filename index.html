@@ -21,7 +21,9 @@
                 <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
             </div>
         </div>
-        <div id='divBack' style='text-align: center;'></div>
+        <div id='divInfo'></div>
+        <div id='divBack' style='text-align: center; display: none; '></div>
+        
     </div>
     <footer style="text-align: center">
         
@@ -30,26 +32,7 @@
     </footer>
 </div>
         
-    <div id="wrapper" style="display: none">
-            <header id="page-header">
-                <div class="inner">
-                    <img src='img/Screen2_MenuIndex_2_header.png' width='50%'>
-                </div>
-            </header>
-    <div id='page-content'>
-        <div class='inner' id='ontent'>
-         <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
-            <div id='divTitle'></div>
-            <div id='divInfo'></div>
-             
-        </div>
-    </div>
-    <footer id="page-footer">
-        <div class="inner">
-            <img src='img/Screen2_MenuIndex_2_footer.png'  width='50%'>
-        </div>
-    </footer>
-        
+   
 
         
 
@@ -58,7 +41,6 @@
     <script>
     function start(){
             var start = document.getElementById('content');
-            var title = document.getElementById('divTitle');
             var info = document.getElementById('divInfo');
             var backDiv = document.getElementById('divBack');
         
@@ -70,16 +52,9 @@
                 'Screen2_MenuIndex_2_button3.png']
             
             var descs = [];
-                descs['0'] = '<img src="img/raffle01.png" width="70%" usemap="raffle01"><map name="raffle01"><area shape="rect" title="Square" coords="30,50,222,60" onclick="alert(\'aie\')" href="google.com" style="background-color: red " /></map>';
+                descs['0'] = '<img src="img/Screen3_PackDownload_2_sliced.png" width="70%" onclick="back()">';
                 descs['1'] = 'Suscbribete a nuestro Newsletter y llévate el porrito hinchuble de Weedmaps!';
-                descs['2'] = '<img src="img/Screen5_PackDownload_1.png" width="70%">';
-            
-             var back = document.createElement('button');
-                 back.className = 'btn btn-danger';
-                 back.innerHTML = 'Volver';
-                 back.onclick = function(){
-                    alert('there be dragons');return false;
-                 };
+                descs['2'] = '<img src="img/Screen5_PackDownload_1.png" width="70%" onclick="back()">';
         
         
             for(var i=0; i< raffles.length; i++){
@@ -96,16 +71,17 @@
 
                     var id = this.id;
                     start.innerHTML = '';
-                    title.innerHTML = raffles[id];
-                    title.style.color = 'white';
                     info.innerHTML = descs[id]; 
                     info.style.color = 'white';
-                    start.append(title);
                     start.append(info);
                     });
                 backDiv.append(back);
             }
     }
+        
+        function back() {
+            alert('hurray');
+        }
     </script>
      
     </body>
