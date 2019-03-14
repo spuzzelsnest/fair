@@ -10,19 +10,21 @@
 </head>
 <body>
     
-<div class="" style="width: 513px; margin: auto; background-color: white; height: 100%">
+<div class="container2" style="width: 537px; margin: auto; background-color: white">
 
-    <header style="height: 17%; text-align: center; max-height: 533px">
-        <img src='img/Screen2_MenuIndex_2_header.png' style="height: 100%">
+    <header style="text-align: center">
+        <img src='img/Screen2_MenuIndex_2_header.png' style="width: 100%">
     </header>
-    <div style="height: calc(100% - 17% - 250px); display: flex; align-items: center;">
-        <div style="text-align: center; width: 100%" id="content">
-            <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
+    <div class="content">
+        <div style="display: flex; align-items: center;">
+            <div style="text-align: center; width: 100%" id="content">
+                <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
+            </div>
         </div>
-        
+        <div id='divBack' style='text-align: center;'></div>
     </div>
-    <footer style="height: 22%; text-align: center; max-height: 250px">
-        <button onclick="alert('hello')" class="btn btn-danger" style="">Volver</button>
+    <footer style="text-align: center">
+        
         
         <img src='img/Screen2_MenuIndex_2_footer.png'  width='50%'>
     </footer>
@@ -39,7 +41,7 @@
          <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
             <div id='divTitle'></div>
             <div id='divInfo'></div>
-             <div id='divBack'></div>
+             
         </div>
     </div>
     <footer id="page-footer">
@@ -63,9 +65,9 @@
             start.innerHTML = '';
         
             var raffles = [
-                'Download Pack',
-                'Newsletter Pack',
-                'Follow Us Pack']
+                'Screen2_MenuIndex_2_button1.png',
+                'Screen2_MenuIndex_2_button2.png',
+                'Screen2_MenuIndex_2_button3.png']
             
             var descs = [];
                 descs['0'] = '<img src="img/raffle01.png" width="70%" usemap="raffle01"><map name="raffle01"><area shape="rect" title="Square" coords="30,50,222,60" onclick="alert(\'aie\')" href="google.com" style="background-color: red " /></map>';
@@ -73,7 +75,7 @@
                 descs['2'] = '<img src="img/Screen5_PackDownload_1.png" width="70%">';
             
              var back = document.createElement('button');
-                 back.className = 'btn btn-light';
+                 back.className = 'btn btn-danger';
                  back.innerHTML = 'Volver';
                  back.onclick = function(){
                     alert('there be dragons');return false;
@@ -82,8 +84,9 @@
         
             for(var i=0; i< raffles.length; i++){
 
-            var raffle = document.createElement('button');
-                raffle.className = 'btn btn-light';
+            var raffle = document.createElement('img');
+                raffle.src = 'img/'+raffles[i];
+                raffle.style.width = '50%';
                 raffle.innerHTML = raffles[i];
                 raffle.setAttribute('id', i);
                 start.append(raffle);
