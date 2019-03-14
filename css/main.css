@@ -5,6 +5,25 @@ body {
   background-position: center; 
 }
 
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 550px auto;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+/*
+
 #page-header,
 #page-footer {
     z-index: -1;
@@ -40,4 +59,4 @@ body {
     margin-right: auto;
     text-align: center;
     background: white;
-}
+}*/
