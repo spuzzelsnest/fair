@@ -18,7 +18,7 @@
     <div class="content">
         <div style="display: flex; align-items: center;">
             <div style="text-align: center; width: 100%" id="content">
-                <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
+                <button type='button' class='btn btn-light' onclick='start()' style="font-size: 3rem;">Comienza a Ganar</button>
             </div>
         </div>
         <div id='divInfo'></div>
@@ -34,15 +34,12 @@
         
    
 
-        
-
-</div>
+    
 
     <script>
     function start(){
             var start = document.getElementById('content');
             var info = document.getElementById('divInfo');
-            var backDiv = document.getElementById('divBack');
         
             start.innerHTML = '';
         
@@ -68,19 +65,18 @@
                 start.appendChild(document.createElement('p'));
 
                 raffle.addEventListener('click', function(e){
-
                     var id = this.id;
                     start.innerHTML = '';
                     info.innerHTML = descs[id]; 
                     info.style.color = 'white';
                     start.append(info);
                     });
-                backDiv.append(back);
+   
             }
     }
         
         function back() {
-            alert('hurray');
+            window.location.reload(false); 
         }
     </script>
      
