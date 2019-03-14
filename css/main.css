@@ -1,5 +1,5 @@
 body { 
-  background-image: url('img/bg.png');
+  background-image: url('../img/background1080.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center; 
@@ -17,7 +17,7 @@ body {
 
 #page-header {
     top: 0;
-    height: 26%;
+    height: 17%;
 }
 
 #page-footer {
@@ -39,5 +39,5 @@ body {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    background: #1a2538;
+    background: white;
 }

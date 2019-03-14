@@ -8,26 +8,31 @@
     <script src='js/popper.min.js'></script>
     <script src='js/bootstrap.min.js'></script>
 </head>
-    <body>
+<body>
         
-        <div id="wrapper">
-    <header id="page-header">
-        <div class="inner">
-             <img src='img/hearder.png' width='50%'>
-        </div>
-    </header>
+    <div id="wrapper">
+            <header id="page-header">
+                <div class="inner">
+                    <img src='img/Screen2_MenuIndex_2_header.png' width='50%'>
+                </div>
+            </header>
     <div id='page-content'>
         <div class='inner' id='content'>
          <button type='button' class='btn btn-light' onclick='start()'>Comienza a Ganar</button>
             <div id='divTitle'></div>
             <div id='divInfo'></div>
+             <div id='divBack'></div>
         </div>
     </div>
     <footer id="page-footer">
         <div class="inner">
-            <img src='img/footer.png'  width='50%'>
+            <img src='img/Screen2_MenuIndex_2_footer.png'  width='50%'>
         </div>
     </footer>
+        
+
+        <button onclick="alert('hello')" class="btn btn-danger" style="">Volver</button>
+
 </div>
 
     <script>
@@ -35,39 +40,50 @@
             var start = document.getElementById('content');
             var title = document.getElementById('divTitle');
             var info = document.getElementById('divInfo');
+            var backDiv = document.getElementById('divBack');
         
             start.innerHTML = '';
         
-            var raffles = [];
-                raffles['0'] = 'Download Pack';
-                raffles['1'] = 'Newsletter Pack';
-                raffles['2'] = 'Follow Us Pack';
-            var descs = [];
-                descs['0'] = '<ol type="1"><li>Descarga la APP</li><li>Registrate</li><li>Muestra tu registro a nuestro Staff</li><p>Bienvenido a la familia Weedmaps';
-                descs['1'] = 'Suscbribete a nuestro Newsletter y llévate el porrito hinchuble de Weedmaps!';
-                descs['2'] = 'Gana uno de estos premios participando en nuestro Sorteo!<ol type="1"><li>Follow @weedmapses</li><li>Tómate una foto en nuestro stand<br>y publica la en tu timeline o stories etiquetandonos @weedmapses</li><li>Muestra tu post a nuestro Staff</li> ';
-        
-        for(var i=0; i< raffles.length; i++){
+            var raffles = [
+                'Download Pack',
+                'Newsletter Pack',
+                'Follow Us Pack']
             
+            var descs = [];
+                descs['0'] = '<img src="img/raffle01.png" width="70%" usemap="raffle01"><map name="raffle01"><area shape="rect" title="Square" coords="30,50,222,60" onclick="alert(\'aie\')" href="google.com" style="background-color: red " /></map>';
+                descs['1'] = 'Suscbribete a nuestro Newsletter y llévate el porrito hinchuble de Weedmaps!';
+                descs['2'] = '<img src="img/Screen5_PackDownload_1.png" width="70%">';
+            
+             var back = document.createElement('button');
+                 back.className = 'btn btn-light';
+                 back.innerHTML = 'Volver';
+                 back.onclick = function(){
+                    alert('there be dragons');return false;
+                 };
+        
+        
+            for(var i=0; i< raffles.length; i++){
+
             var raffle = document.createElement('button');
                 raffle.className = 'btn btn-light';
                 raffle.innerHTML = raffles[i];
                 raffle.setAttribute('id', i);
                 start.append(raffle);
                 start.appendChild(document.createElement('p'));
-                
+
                 raffle.addEventListener('click', function(e){
-                    
+
                     var id = this.id;
                     start.innerHTML = '';
                     title.innerHTML = raffles[id];
                     title.style.color = 'white';
-                    info.innerHTML = descs[id];
+                    info.innerHTML = descs[id]; 
                     info.style.color = 'white';
                     start.append(title);
                     start.append(info);
-                });
-        }
+                    });
+                backDiv.append(back);
+            }
     }
     </script>
      
