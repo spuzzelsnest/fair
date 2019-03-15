@@ -48,17 +48,17 @@
                 'Screen2_MenuIndex_2_button2.png',
                 'Screen2_MenuIndex_2_button3.png']
             
-            var descs = [];
-                descs['0'] = '<img src="img/Screen3_PackDownload_2_sliced.png" width="70%" onclick="back()">';
-                descs['1'] = 'Suscbribete a nuestro Newsletter y llévate el porrito hinchuble de Weedmaps!';
-                descs['2'] = '<img src="img/Screen5_PackDownload_1.png" width="70%" onclick="back()">';
+            var descs = [
+                '<img src="img/download.png" width="100%" onclick="back()">',
+                '<img src="img/newsletter.png" width="100%" onclick="back()">',
+                '<img src="img/social.png" width="100%" onclick="back()">']
         
         
             for(var i=0; i< raffles.length; i++){
 
             var raffle = document.createElement('img');
                 raffle.src = 'img/'+raffles[i];
-                raffle.style.width = '50%';
+                raffle.style.width = '75%';
                 raffle.innerHTML = raffles[i];
                 raffle.setAttribute('id', i);
                 start.append(raffle);
@@ -68,7 +68,7 @@
                     var id = this.id;
                     start.innerHTML = '';
                     info.innerHTML = descs[id]; 
-                    info.style.color = 'white';
+                    //info.style.color = 'white';
                     start.append(info);
                     });
    

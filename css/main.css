@@ -21,16 +21,16 @@ body {
 }
 .content {
   flex: 1;     /* this is the key; consumes all available height */
-/*  background: blue;*/
+ background: white;
 }
 header {
     /* dit is het te aanpassen getal */
   height: 300px;
-/*  background: red;*/
+background: white;
 }
 footer {
   height: 150px;
-/*  background: green;*/
+  background: white;
 }
 
 /*
